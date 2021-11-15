@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+    <context id="DB2Tables"    targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="true"/>  
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!--数据库链接地址账号密码-->  
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/dlm_db?characterEncoding=utf-8" userId="dlm_user" password="-Sm4Dgt:q#?9t(qv">  
+        </jdbcConnection>  
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!--生成Model类存放位置-->  
+        <javaModelGenerator targetPackage="com.jydacai.DLMServer.data.model" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!--生成映射文件存放位置-->  
+        <sqlMapGenerator targetPackage="com.jydacai.DLMServer.data.mapper" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+        <!--生成Dao类存放位置-->  
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码  
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象  
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象  
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口  
+        -->  
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.jydacai.DLMServer.data.dao" targetProject="src/main/java">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>  
+        <!--
+        生成对应表及类名
+    Deeplink
+    Filter
+    Channel
+    Access
+        -->  
+        <table tableName="Deeplink" domainObjectName="Deeplink" 
+        		enableCountByExample="true" enableUpdateByExample="true" 
+        		enableDeleteByExample="true" enableSelectByExample="true" 
+        		selectByExampleQueryId="true"></table> 
+        <table tableName="Filter" domainObjectName="Filter" 
+        		enableCountByExample="true" enableUpdateByExample="true" 
+        		enableDeleteByExample="true" enableSelectByExample="true" 
+        		selectByExampleQueryId="true"></table> 
+        <table tableName="Channel" domainObjectName="Channel" 
+        		enableCountByExample="true" enableUpdateByExample="true" 
+        		enableDeleteByExample="true" enableSelectByExample="true" 
+        		selectByExampleQueryId="true"></table> 
+        <table tableName="Access" domainObjectName="Access" 
+        		enableCountByExample="true" enableUpdateByExample="true" 
+        		enableDeleteByExample="true" enableSelectByExample="true" 
+        		selectByExampleQueryId="true"></table> 
+        <table tableName="NAS" domainObjectName="NAS" 
+        		enableCountByExample="true" enableUpdateByExample="true" 
+        		enableDeleteByExample="true" enableSelectByExample="true" 
+        		selectByExampleQueryId="true"></table> 
+    </context>  
+</generatorConfiguration>
